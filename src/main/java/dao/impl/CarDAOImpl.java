@@ -3,7 +3,9 @@ package dao.impl;
 import dao.AbstractDao;
 import dao.CarDAO;
 import model.Car;
+import model.CarStatus;
 import model.User;
+
 
 import javax.persistence.TypedQuery;
 
@@ -30,5 +32,16 @@ public class CarDAOImpl extends AbstractDao implements CarDAO {
         return query.setParameter("registration_number", registrationNumber).getSingleResult();
     }
 
+    @Override
+    public CarStatus getCarStatus(Long id) {
+        Car car = getCarById(id);
+        return car.getStatus();
+    }
 
+    @Override
+    public void changeCarStatus(Long id, CarStatus carStatus) {
+        Car car = getCarById(id);
+        car.setStatus(carStatus);
+        hibernateUtil.save(car);
+    }
 }
