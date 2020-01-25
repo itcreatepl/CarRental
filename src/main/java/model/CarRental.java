@@ -16,8 +16,9 @@ public class CarRental {
     private LocalDate rentalDate;
     @Column(name="date_from")
     private LocalDate dateFrom;
-    @Column(name="dateTo")
+    @Column(name="date_to")
     private LocalDate dateTo;
+    @Column(name="total_charge")
     private BigDecimal totalCharge;
     @ManyToOne
     @JoinColumn(name = "id_user")
