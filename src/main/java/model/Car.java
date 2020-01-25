@@ -27,6 +27,14 @@ public class Car {
     public Car() {
     }
 
+    public Long getIdCar() {
+        return idCar;
+    }
+
+    public void setIdCar(Long idCar) {
+        this.idCar = idCar;
+    }
+
     public String getRegistrationNumber() {
         return registrationNumber;
     }
@@ -67,5 +75,11 @@ public class Car {
         this.productionYear = productionYear;
     }
 
+    public CarStatus getStatus() {
+        return status;
+    }
 
+    public void setStatus(CarStatus status) {
+        this.status = status;
+    }
 }

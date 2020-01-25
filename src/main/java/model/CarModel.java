@@ -20,7 +20,7 @@ public class CarModel {
     @Column(name="car_mark")
     private CarMark carMark;
     @Enumerated(EnumType.STRING)
-    @Column(name="car_mark")
+    @Column(name="car_type")
     private CarType carType;
     @OneToMany(mappedBy = "carModel")
     private Set<Car> cars;
@@ -28,6 +28,14 @@ public class CarModel {
     private BigDecimal dailyCost;
 
     public CarModel() {
+    }
+
+    public Long getIdModel() {
+        return idModel;
+    }
+
+    public void setIdModel(Long idModel) {
+        this.idModel = idModel;
     }
 
     public String getName() {
@@ -54,6 +62,21 @@ public class CarModel {
         this.photoDirectory = photoDirectory;
     }
 
+    public CarMark getCarMark() {
+        return carMark;
+    }
+
+    public void setCarMark(CarMark carMark) {
+        this.carMark = carMark;
+    }
+
+    public CarType getCarType() {
+        return carType;
+    }
+
+    public void setCarType(CarType carType) {
+        this.carType = carType;
+    }
 
     public Set<Car> getCars() {
         return cars;
