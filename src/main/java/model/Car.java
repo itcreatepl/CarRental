@@ -21,5 +21,51 @@ public class Car {
     private CarModel carModel;
     @Column(name="production_year")
     private int productionYear;
-    private int status;
+    @Enumerated(EnumType.STRING)
+    private CarStatus status;
+
+    public Car() {
+    }
+
+    public String getRegistrationNumber() {
+        return registrationNumber;
+    }
+
+    public void setRegistrationNumber(String registrationNumber) {
+        this.registrationNumber = registrationNumber;
+    }
+
+    public Double getFuelLevel() {
+        return fuelLevel;
+    }
+
+    public void setFuelLevel(Double fuelLevel) {
+        this.fuelLevel = fuelLevel;
+    }
+
+    public String getCarConditionNote() {
+        return carConditionNote;
+    }
+
+    public void setCarConditionNote(String carConditionNote) {
+        this.carConditionNote = carConditionNote;
+    }
+
+    public CarModel getCarModel() {
+        return carModel;
+    }
+
+    public void setCarModel(CarModel carModel) {
+        this.carModel = carModel;
+    }
+
+    public int getProductionYear() {
+        return productionYear;
+    }
+
+    public void setProductionYear(int productionYear) {
+        this.productionYear = productionYear;
+    }
+
+
 }

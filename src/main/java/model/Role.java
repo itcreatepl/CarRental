@@ -10,4 +10,20 @@ public class Role {
     @Column(name="id_role")
     private Long idRole;
     private String roleName;
+
+    public Role() {
+    }
+
+    public Long getIdRole() {
+        return idRole;
+    }
+
+
+    public String getRoleName() {
+        return roleName;
+    }
+
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
+    }
 }

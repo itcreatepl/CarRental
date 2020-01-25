@@ -15,4 +15,32 @@ public class Location {
     private String address;
     @Column(name="additional_cost")
     private BigDecimal additionalCost;
+
+    public Location() {
+
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public BigDecimal getAdditionalCost() {
+        return additionalCost;
+    }
+
+    public void setAdditionalCost(BigDecimal additionalCost) {
+        this.additionalCost = additionalCost;
+    }
 }
