@@ -3,11 +3,13 @@ package dao.impl;
 import dao.AbstractDao;
 import dao.CarDAO;
 import model.Car;
+import model.CarModel;
 import model.CarStatus;
 import model.User;
 
 
 import javax.persistence.TypedQuery;
+import java.util.List;
 
 public class CarDAOImpl extends AbstractDao implements CarDAO {
 
@@ -43,5 +45,12 @@ public class CarDAOImpl extends AbstractDao implements CarDAO {
         Car car = getCarById(id);
         car.setStatus(carStatus);
         hibernateUtil.save(car);
+    }
+
+    @Override
+    public List<Car> getCarsByCarModel(CarModel carModel) {
+        TypedQuery<Car> query = entityManager.createQuery("select c from Car c where c.carModel = :carModel", Car.class);
+        return query.setParameter("carModel", carModel).getResultList();
+
     }
 }

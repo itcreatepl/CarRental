@@ -4,6 +4,7 @@ public enum CarMark {
     ALFAROMEO,
     AUDI,
     BMW,
+    FORD,
     MAZDA,
     MERCEDES_BENZ,
     NISSAN,

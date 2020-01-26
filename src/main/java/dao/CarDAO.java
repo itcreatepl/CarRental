@@ -1,7 +1,10 @@
 package dao;
 
 import model.Car;
+import model.CarModel;
 import model.CarStatus;
+
+import java.util.List;
 
 public interface CarDAO {
 
@@ -16,4 +19,8 @@ public interface CarDAO {
     CarStatus getCarStatus(Long id);
 
     void changeCarStatus(Long id, CarStatus carStatus);
+
+    List<Car> getCarsByCarModel(CarModel carModel);
+
+
 }

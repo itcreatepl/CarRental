@@ -4,7 +4,12 @@ import dao.AbstractDao;
 import dao.CarModelDAO;
 import model.Car;
 import model.CarModel;
+import model.CarType;
 import model.User;
+
+import javax.persistence.TypedQuery;
+import java.util.List;
+import java.util.Set;
 
 public class CarModelDAOImpl extends AbstractDao implements CarModelDAO {
 
@@ -21,5 +26,17 @@ public class CarModelDAOImpl extends AbstractDao implements CarModelDAO {
     @Override
     public CarModel getCarModelById(Long id) {
         return entityManager.find(CarModel.class, id);
+    }
+
+    @Override
+    public List<CarModel> getAllCarModels() {
+        TypedQuery<CarModel> query = entityManager.createQuery("FROM CarModel", CarModel.class);
+        return query.getResultList();
+    }
+
+    @Override
+    public List<CarModel> getCarModelsByCarType(CarType carType) {
+        TypedQuery<CarModel> query = entityManager.createQuery("select cm from CarModel cm where cm.car_type = :car_type", CarModel.class);
+        return query.setParameter("car_type", carType).getResultList();
     }
 }

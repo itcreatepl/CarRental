@@ -20,6 +20,10 @@ public class Location {
 
     }
 
+    public Long getIdLocation() {
+        return idLocation;
+    }
+
     public String getName() {
         return name;
     }
