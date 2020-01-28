@@ -49,6 +49,8 @@ public class SearchCarServlet extends HttpServlet {
         String dateToString = req.getParameter(END_DATE);
         LocalDate dateTo = LocalDate.parse(dateToString);
 
+        
+
 
     }
 

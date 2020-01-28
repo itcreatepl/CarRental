@@ -2,14 +2,11 @@ package dao.impl;
 
 import dao.AbstractDao;
 import dao.CarModelDAO;
-import model.Car;
 import model.CarModel;
 import model.CarType;
-import model.User;
 
 import javax.persistence.TypedQuery;
 import java.util.List;
-import java.util.Set;
 
 public class CarModelDAOImpl extends AbstractDao implements CarModelDAO {
 

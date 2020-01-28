@@ -32,6 +32,9 @@ public class CarRental {
     @ManyToOne
     @JoinColumn(name = "id_to_location")
     private Location toLocation;
+    @ManyToOne
+    @JoinColumn(name = "id_model")
+    private CarModel carModel;
 
     public CarRental() {
     }
